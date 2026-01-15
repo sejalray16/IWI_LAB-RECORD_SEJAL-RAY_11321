@@ -1,0 +1,30 @@
+<!--Apply Inline, Internal, and External CSS styles to HTML elements-->
+
+<!DOCTYPE html>
+<head>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport"content="width=device-width,initial-scale=1.0">
+            <title>inline.internal and external CSS</title>
+
+            <!--external CSS-->
+            <link rel="spreasheet" href="style.css">
+
+            <!--internal CSS-->
+            <style>
+                h1{
+                    color:green;
+                    font-size: 18px;
+                }
+            </style>
+        </head>
+    <body>
+        <!--inline CSS-->
+        <h1
+        style="background-color:lightgray;padding:10px;">welcome to CSS Example</h1>
+        <p>this paragraph uses<strong>internal CSS</strong>styling.</p>
+        <div class="box">this box is styled using<strong>external CSS</strong></div>
+    </body>
+</head>
+</html>

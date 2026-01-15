@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Drawing</title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="300" height="200" style="border:1px solid black;"></canvas>
+
+<script>
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+
+  // Draw rectangle
+  ctx.fillStyle = "blue";
+  ctx.fillRect(20, 20, 100, 60);
+
+  // Draw circle
+  ctx.beginPath();
+  ctx.arc(200, 70, 30, 0, 2 * Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+
+  // Draw line
+  ctx.beginPath();
+  ctx.moveTo(20, 150);
+  ctx.lineTo(280, 150);
+  ctx.strokeStyle = "green";
+  ctx.stroke();
+</script>
+
+</body>
+</html>

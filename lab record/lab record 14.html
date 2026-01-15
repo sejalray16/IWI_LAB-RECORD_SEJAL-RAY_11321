@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation with JavaScript Events</title>
+  <style>
+    input {
+      display: block;
+      margin-bottom: 10px;
+      padding: 6px;
+      width: 250px;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>JavaScript Form Validation Demo</h2>
+
+  <form id="myForm" onsubmit="return validateForm()">
+    <label>Name:</label>
+    <input type="text" id="name" oninput="clearError('nameError')">
+    <span id="nameError" class="error"></span>
+
+    <label>Email:</label>
+    <input type="text" id="email" oninput="clearError('emailError')">
+    <span id="emailError" class="error"></span>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // -------------------------------
+    // Clear error message on input
+    // -------------------------------
+    function clearError(id) {
+      document.getElementById(id).textContent = "";
+    }
+
+    // -------------------------------
+    // Form Validation (onsubmit)
+    // -------------------------------
+    function validateForm() {
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let valid = true;
+
+      // Validate Name
+      if (name === "") {
+        document.getElementById("nameError").textContent = "Name is required.";
+        valid = false;
+      }
+
+      // Validate Email
+      if (email === "") {
+        document.getElementById("emailError").textContent = "Email is required.";
+        valid = false;
+      } else if (!email.includes("@") || !email.includes(".")) {
+        document.getElementById("emailError").textContent = "Invalid email format.";
+        valid = false;
+      }
+
+      // If form is invalid, stop submission
+      if (!valid) {
+        alert("Please fix the errors before submitting!");
+        return false; // prevent form submission
+      }
+
+      // If valid, success message
+      alert("Form submitted successfully!");
+      return true;
+    }
+  </script>
+
+</body>
+</html>

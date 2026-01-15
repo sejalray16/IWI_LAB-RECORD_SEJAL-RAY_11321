@@ -1,0 +1,58 @@
+<!--Use div and span elements for layout and apply styling with CSS-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"content="width=device-width,initial-scale=1.0">
+        <title>div and span example</title>
+        <style>
+            /* style for page layout using div*/
+            .header{
+                background-color:#4CAF50;
+                color:white;
+                text-align:center;
+                padding:20px;
+            }
+            .content{
+                display:flex;
+                justify-content:space-around;
+                margin:20px;
+            }
+            .box{
+                background-color:#f0f0f0;
+                border:1px solid #ccc;
+                padding:20px
+                width:30%;
+                text-align:center,
+                border-radius:10px;
+            }
+            .footer{
+                background-color:#333;
+                color:white;
+                text-align:center,
+                padding:15px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!--header-->
+        <div class="header">
+            <h1>My Web Page Layout</h1>
+        </div>
+
+        <!--Main Content-->
+        <div class="content">
+            <div class="box">Box1:<span class=highlight>important text</span>>/div>
+            <div class="box">Box2:layout using div</div>
+            <div class="box">Bow3:styled with CSS</div>
+        </div>
+
+        <!--footer-->
+        <div class="footer">
+            <p>Created by<span class=highlight>sejal ray</span></p>
+        </div>
+    </body>
+</html>

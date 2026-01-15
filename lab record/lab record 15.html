@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Manipulation Demo</title>
+  <style>
+    #box {
+      width: 250px;
+      padding: 15px;
+      border: 2px solid black;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>DOM Manipulation using JavaScript</h2>
+
+  <p id="textPara">This is original text.</p>
+  <button onclick="changeText()">Change Text (getElementById)</button>
+
+  <br><br>
+
+  <div id="box">
+    <p class="msg">Click the button to change this message.</p>
+  </div>
+  <button onclick="updateBox()">Update Box (querySelector)</button>
+
+  <br><br>
+
+  <button onclick="addHTML()">Add New HTML (innerHTML)</button>
+  <div id="resultArea"></div>
+
+  <script>
+    // ------------------------------------------
+    // Using getElementById()
+    // ------------------------------------------
+    function changeText() {
+      const para = document.getElementById("textPara");
+      para.innerHTML = "✔ Text changed using <b>getElementById()</b>!";
+    }
+
+    // ------------------------------------------
+    // Using querySelector()
+    // ------------------------------------------
+    function updateBox() {
+      const message = document.querySelector("#box .msg");
+      message.innerHTML = "✔ Message updated using <b>querySelector()</b>!";
+    }
+
+    // ------------------------------------------
+    // Using innerHTML to add new content
+    // ------------------------------------------
+    function addHTML() {
+      const area = document.getElementById("resultArea");
+      area.innerHTML = "<h3>New content added using innerHTML!</h3><p>This text was inserted dynamically.</p>";
+    }
+  </script>
+
+</body>
+</html>

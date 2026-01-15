@@ -1,0 +1,85 @@
+<!--Create a responsive web page using media queries 
+and mobile-first design with flexible units-->
+
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf=8">
+        <meta name="viewport"content="width=device-widht,initial-scale=1.0">
+        <title>responsive web page</title>
+
+        <style>
+            /* Mobile-first styles(default for small screens)*/
+            body{
+                font-family:Arial,sans-serif;
+                margin:0;
+                padding:0;
+                background-color:#f2f2f2;
+            }
+
+            header{
+                background-color:#4CAF50;
+                color:white;
+                text-align:center;
+                padding:1rem;
+            }
+
+            main{
+                padding:1rem;
+            }
+
+            .container{
+                display:flex;
+                flex-direction:column;
+                gap:1rem;
+            }
+
+            .box{
+                backgrounud-color:white;
+                padding:2rem;
+                border-radius:10px;
+                text-align:center;
+                font-size:1rem;
+            }
+
+            /* use flexible units */
+            .box{
+                width:90%;
+                margin:auto;
+            }
+
+            /* for tablets and larger screens */
+            @media(min-width:600px){
+                .container{
+                    flex-direction:row;
+                    justify-content:space-around;
+                }
+                .box{
+                    width:45%;
+                }
+            }
+
+            /*for desktops and large screens*/
+            @media(min-width:1024px){
+                .box{
+                    width:30%;
+                    font-size:1.2rem;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Responsive Web Page</h1>
+        </header>
+
+        <main>
+            <div class="container">
+            <div class="box">box 1-Mobile First</div>
+            <div class="box">box 2-Media Queries</div>
+            <div class="box">box 3-Flexible Units</div>
+            </div>
+        </main>
+    </body>
+</html>

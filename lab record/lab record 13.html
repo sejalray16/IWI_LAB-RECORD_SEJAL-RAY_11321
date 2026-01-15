@@ -1,0 +1,66 @@
+<!--Create and invoke user-defined functions in JavaScript; use var, 
+let, and const for scope demonstration-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Functions & Scope Demo</title>
+</head>
+<body>
+  <h2>Open the Console to See the Output</h2>
+
+  <script>
+    // ------------------------------------
+    // User-Defined Functions
+    // ------------------------------------
+
+    // Function Declaration
+    function greet(name) {
+      console.log("Hello, " + name + "!");
+    }
+    // Function Expression
+    const add = function(a, b) {
+      return a + b;
+    };
+
+    // Arrow Function
+    const multiply = (x, y) => x * y;
+
+    // Invoking functions
+    greet("Rida");
+    console.log("Addition:", add(5, 10));
+    console.log("Multiplication:", multiply(4, 3));
+
+    // ------------------------------------
+    // Scope Demonstration: var, let, const
+    // ------------------------------------
+    function scopeDemo() {
+      var a = 10;   // function-scoped
+      let b = 20;   // block-scoped
+      const c = 30; // block-scoped
+
+      console.log("Before block:");
+      console.log("a =", a, "| b =", b, "| c =", c);
+
+      if (true) {
+        var a = 100;   // same variable (function scoped)
+        let b = 200;   // new block variable
+        const c = 300; // new block constant
+
+        console.log("Inside block:");
+        console.log("a =", a); // 100
+        console.log("b =", b); // 200
+        console.log("c =", c); // 300
+      }
+
+      console.log("After block:");
+      console.log("a =", a); // 100 → changed
+      console.log("b =", b); // 20  → unchanged
+      console.log("c =", c); // 30  → unchanged
+    }
+
+    // Invoke scope demo
+    scopeDemo();
+  </script>
+</body>
+</html>
